@@ -4,17 +4,24 @@ public class Bingo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Random a=new Random();
-		int arr [] = new int[15];
 		
-		for(int i=0;i<arr.length;i++){
-			arr[i]=a.nextInt(10);
-		}
+		int arr [] = creavector(15);
+		
+		
 		System.out.println(arr.length);
 		int four=recorrer(arr);
 		System.out.println("The number 4 is repeated : "+four+" times");
 	}
-	
+	private static int [] creavector(int longitud){
+		
+		Random a=new Random();
+		int [] nuevovector=new int[longitud];
+		for(int i=0;i<nuevovector.length;i++){
+			nuevovector[i]=a.nextInt(10);
+		}
+		
+		return nuevovector;
+	}
 	
 	private static int recorrer(int [] a){
 		int four=0;
